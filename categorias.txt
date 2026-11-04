@@ -1,0 +1,35 @@
+CASUAL
+- Camisetas
+- Shorts/bermudas
+- Calça 
+- Regatas
+- Polos
+
+SOCIAL
+- Camisas sociais
+
+UNIFORMES
+- Escolares
+  - Camiseta
+  - Shorts
+  - Calça
+  - Camisetas personalizadas terceirão
+- Corporativos
+  - Camisa
+  - Camiseta
+  - Calça brim
+- Operacionais
+  - Roupas EPI
+  - Segurança
+  - Camisetas
+  - Calça reforçada
+
+INVERNO
+- Moletom
+- Calça moletom
+- Jaqueta
+- Blusa
+
+ESPORTIVO
+- Camisetas esportivas/Futebol
+- Leggings
