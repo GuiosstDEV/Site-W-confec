@@ -20,8 +20,8 @@ function trocarItem(direcao) {
 
     animando = true;
     let itemAnterior = items[ativo];
-    let pontoAnterior = indicador.querySelector("ul li.ativo");
     let indiceNovo = (ativo + direcao + items.length) % items.length;
+    let pontoNovo = Math.floor(indiceNovo * pontos.length / items.length);
     let itemNovo = items[indiceNovo];
     let classeSaida = direcao > 0 ? "saindo-esquerda" : "saindo-direita";
     let classeEntrada = direcao > 0 ? "entrando-direita" : "entrando-esquerda";
@@ -38,10 +38,10 @@ function trocarItem(direcao) {
         itemNovo.classList.add("ativo");
     });
 
-    pontoAnterior.classList.remove("ativo");
-    pontos[indiceNovo].classList.add("ativo");
+    indicador.querySelector("ul li.ativo").classList.remove("ativo");
+    pontos[pontoNovo].classList.add("ativo");
     ativo = indiceNovo;
-    indicador.querySelector(".numero").innerHTML = "0" + (ativo + 1);
+    indicador.querySelector(".numero").textContent = String(ativo + 1).padStart(2, "0");
 
     setTimeout(() => {
         itemAnterior.classList.remove(classeSaida);
