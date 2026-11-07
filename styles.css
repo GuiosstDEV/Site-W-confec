@@ -9,7 +9,7 @@
 }
 
 body {
-    
+    overflow-x: hidden;
     background-color: #000;
     color:#fff;
     font-size: 16px;
@@ -48,6 +48,7 @@ section {
     background-image: radial-gradient(circle, #061D8B , #3A83C4 );
     height: 100vh;
     position: relative;
+    overflow: hidden;
 
     &::before {
         content: '';
