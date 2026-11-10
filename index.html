@@ -15,17 +15,26 @@
 
 <body>
     <header>
-        <img src="./img/Logow.png" alt="logo W">
-        <nav>
+        <a class="logo" href="#home" aria-label="W Confecções - início">
+            <img src="./img/Logow.png" alt="W Confecções">
+        </a>
+        <nav aria-label="Navegação principal">
             <ul>
-                <li>HOME</li>
-                <li>ROUPAS</li>
-                <li>SOBRE</li>
+                <li><a class="nav-link ativo" href="#home" aria-current="page">HOME</a></li>
+                <li><a class="nav-link" href="#roupas">ROUPAS</a></li>
+                <li><span class="nav-link nav-em-breve" aria-disabled="true">SOBRE</span></li>
             </ul>
         </nav>
     </header>
 
-    <section class="container">
+    <main>
+        <section class="home" id="home" aria-label="Página inicial">
+            <div class="home-foto" role="img" aria-label="Espaço reservado para uma foto da empresa">
+                <span>Espaço reservado<br>para foto da empresa</span>
+            </div>
+        </section>
+
+        <section class="container" id="roupas" aria-label="Catálogo de roupas">
         <div class="list">
             <div class="item ativo">
                 <div class="roupa-img">
@@ -476,7 +485,8 @@
                 <li></li>
             </ul>
         </div>
-    </section>
+        </section>
+    </main>
 
     <script src="./scripts.js"></script>
 </body>

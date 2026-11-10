@@ -13,65 +13,102 @@ body {
     background-color: #000;
     color:#fff;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
-header  {
+header {
     position: fixed;
     top: 0;
     z-index: 10;
-    width: 80vw;
+    width: 100%;
+    min-height: 68px;
+    padding: 8px clamp(16px, 3vw, 40px);
     left: 50%;
     transform: translateX(-50%);
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 600px;
-    gap: 100px;
-    
-    & img {
-        width: 100px;
+    grid-template-columns: 1fr auto;
+
+    & .logo {
+        display: inline-flex;
+        width: fit-content;
+    }
+
+    & .logo img {
+        width: 88px;
         height: auto;
         object-fit: contain;
-        margin-top: 8px;
     }
 
     & nav {
         & ul {
-            display: grid;
-            grid-template-columns: repeat(3, 200px);
-            gap: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
     }
 }
 
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+        border-color: #FFD43B;
+        background-color: rgba(255, 212, 59, 0.18);
+        outline: none;
+    }
+}
+
+main {
+    padding-top: 0;
+}
 
 section {
     background-image: radial-gradient(circle, #061D8B , #3A83C4 );
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
     position: relative;
     overflow: hidden;
 
     & .list {
 
-    width: 90vw;
+    width: min(92vw, 1600px);
     height: 100%;
     margin: auto;
     position: relative;
     z-index: 2;
+    overflow: hidden;
     
         & .item {
             position: absolute;
             inset: 0;
+            width: 100%;
            
             & .roupa-img {
                 position: absolute;
                 z-index: 2;
-                left: 15vw;
+                left: clamp(2.5rem, 5vw, 7rem);
                 top: 50%;
                 transform: translateY(-50%);
-                width: 25%;
+                width: clamp(220px, 28vw, 420px);
 
                 & img {
                     width: 100%;
+                    max-height: 70vh;
+                    object-fit: contain;
                     transform: rotate(-10deg);
                 }
                 &::before {
@@ -89,8 +126,8 @@ section {
 
             & .content {
                 position: absolute;
-                right: 15vw;
-                width: 40vw;
+                right: clamp(5.5rem, 7vw, 8.5rem);
+                width: min(30vw, 430px);
                 height: 100%;
                 text-align: right;
 
@@ -103,8 +140,8 @@ section {
                     align-items: flex-end;
 
                     & h2 {
-                        max-width: 45vw;
-                        font-size: clamp(3rem, 7vw, 8em);
+                        max-width: min(48vw, 680px);
+                        font-size: clamp(2.8rem, 5vw, 6.5rem);
                         line-height: 0.9em;
                     }
                 }
@@ -116,13 +153,14 @@ section {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-end;
-                    gap: 20px;
+                    gap: 18px;
 
                     & .roupa-descricao {
                         color: #fff;
-                        font-size: 12px;
+                        max-width: 340px;
+                        font-size: 16px;
+                        line-height: 1.5;
                         text-align: right;
-                        max-width: 400px;
                     }
 
                     & .informacao {
@@ -154,8 +192,66 @@ section {
 
 }  
 
+.container {
+    height: calc(100vh - 84px);
+    height: calc(100svh - 84px);
+    min-height: 0;
+}
+
+.container .list {
+    width: min(92vw, 1600px);
+}
+
+.container .list .item .roupa-img {
+    left: calc(clamp(3rem, 7vw, 7.5rem) + 30px);
+    width: clamp(240px, 22vw, 420px);
+}
+
+.container .list .item .content {
+    right: clamp(5.5rem, 7vw, 8.5rem);
+    width: min(30vw, 430px);
+}
+
+.container .list .item .content .content-top h2 {
+    max-width: 100%;
+    font-size: clamp(3rem, 4.8vw, 5.4rem);
+}
+
+.container .seta {
+    width: min(calc(100% - 32px), 1680px);
+}
+
+.container .indicador {
+    width: min(92vw, 1600px);
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 84px clamp(28px, 8vw, 120px) 24px;
+    scroll-margin-top: 0;
+}
+
+#roupas {
+    scroll-margin-top: 84px;
+}
+
+.home-foto {
+    display: grid;
+    place-items: center;
+    width: clamp(280px, 30vw, 420px);
+    aspect-ratio: 0.84;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    background: rgba(6, 29, 139, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    line-height: 1.5;
+}
+
 .seta {
-    width: 70vw;
+    width: min(92vw, 1500px);
+    max-width: 1500px;
     position: absolute;
     z-index: 3;
     top: 50%;
@@ -244,35 +340,310 @@ section {
     }
 }
 
+@media (min-width: 1800px) {
+    .container .list {
+        width: min(88vw, 1680px);
+    }
+
+    .container .list .item .roupa-img {
+        left: calc(12% + 28px);
+        width: clamp(420px, 30%, 520px);
+    }
+
+    .container .list .item .content {
+        right: clamp(5.5rem, 7vw, 8.5rem);
+        width: min(30vw, 440px);
+    }
+}
+
+@media (max-width: 1000px) {
+    .container .list {
+        width: 94vw;
+    }
+
+    .container .list .item .roupa-img {
+        left: calc(6% + 24px);
+        width: 34%;
+    }
+
+    .container .list .item .content {
+        right: clamp(3.5rem, 6vw, 5.5rem);
+        width: min(38%, 390px);
+    }
+
+    .container .list .item .content .content-top h2 {
+        font-size: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .container .list .item .content .content-bottom .roupa-descricao {
+        font-size: 15px;
+    }
+
+    .container .seta {
+        width: calc(100% - 28px);
+    }
+}
+
+@media (max-width: 820px) {
+    header {
+        min-height: 64px;
+        padding: 6px 12px;
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+    }
+
+    header .logo img {
+        width: 68px;
+    }
+
+    header nav ul {
+        justify-content: flex-end;
+        gap: 2px;
+    }
+
+    .nav-link {
+        min-height: 38px;
+        padding: 0 8px;
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+    }
+
+    .home {
+        padding: 84px 20px 20px;
+    }
+
+    .home-foto {
+        width: min(78vw, 360px);
+    }
+
+    #roupas {
+        scroll-margin-top: 64px;
+    }
+
+    .container {
+        height: calc(100vh - 64px);
+        height: calc(100svh - 64px);
+        min-height: 0;
+    }
+
+    .container .list {
+        width: 100%;
+    }
+
+    .container .list .item .roupa-img {
+        top: 7%;
+        left: 50%;
+        width: clamp(170px, 48vw, 240px);
+        transform: translateX(calc(-50% + 21px));
+    }
+
+    .container .list .item .roupa-img img {
+        max-height: 32svh;
+    }
+
+    .container .list .item .content {
+        top: 52%;
+        right: 50%;
+        width: min(84vw, 420px);
+        height: auto;
+        text-align: center;
+        transform: translateX(50%);
+    }
+
+    .container .list .item .content .content-top {
+        position: static;
+        align-items: center;
+    }
+
+    #roupas .list .item .content .content-top h2 {
+        max-width: 100%;
+        font-size: clamp(2rem, 9vw, 3.5rem);
+        line-height: 0.95;
+        text-align: center;
+    }
+
+    .container .list .item .content .content-bottom {
+        position: static;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .container .list .item .content .content-bottom .roupa-descricao {
+        max-width: 32rem;
+        font-size: 14px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .container .list .item .content .content-bottom .informacao {
+        min-width: 148px;
+        height: 46px;
+    }
+
+    .container .seta {
+        top: 35%;
+        width: calc(100% - 18px);
+    }
+
+    .container .seta button {
+        width: 42px;
+        height: 42px;
+    }
+
+    .container .seta button img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .container .indicador {
+        top: auto;
+        bottom: 18px;
+        left: 18px;
+        width: auto;
+        height: auto;
+        transform: none;
+        gap: 8px;
+    }
+
+    .container .indicador .numero {
+        width: auto;
+        font-size: clamp(2.2rem, 10vw, 3.2rem);
+        text-align: left;
+    }
+
+    .container .indicador ul {
+        justify-content: flex-start;
+        width: auto;
+    }
+}
+
+@media (max-width: 380px) {
+    header {
+        gap: 4px;
+        padding-inline: 8px;
+    }
+
+    header .logo img {
+        width: 58px;
+    }
+
+    .nav-link {
+        min-height: 36px;
+        padding-inline: 6px;
+        font-size: 0.66rem;
+    }
+
+    .container .list .item .content {
+        top: 55%;
+    }
+
+    #roupas .list .item .content .content-top h2 {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+    }
+
+    .container .list .item .content .content-bottom .roupa-descricao {
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 600px) and (min-width: 821px) {
+    .container .list .item .roupa-img {
+        width: clamp(220px, 27vw, 360px);
+    }
+
+    .container .list .item .roupa-img img {
+        max-height: 62vh;
+    }
+
+    .container .list .item .content .content-top h2 {
+        font-size: clamp(2.8rem, 5vw, 5rem);
+    }
+
+    .container .list .item .content .content-bottom {
+        top: calc(50% + 42px);
+        gap: 12px;
+    }
+
+    .container .indicador {
+        height: 150px;
+    }
+}
+
+@media (max-height: 600px) and (max-width: 820px) {
+    .container .list .item .roupa-img {
+        top: 8%;
+        width: clamp(150px, 30vw, 220px);
+    }
+
+    .container .list .item .roupa-img img {
+        max-height: 28svh;
+    }
+
+    .container .list .item .content {
+        top: 42%;
+    }
+
+    #roupas .list .item .content .content-top h2 {
+        font-size: clamp(1.8rem, 6vw, 2.8rem);
+    }
+
+    .container .list .item .content .content-bottom {
+        gap: 8px;
+        margin-top: 6px;
+    }
+
+    .container .list .item .content .content-bottom .roupa-descricao {
+        font-size: 13px;
+    }
+
+    .container .list .item .content .content-bottom .informacao {
+        height: 40px;
+    }
+
+    .container .seta {
+        top: 25%;
+    }
+
+    .container .indicador {
+        bottom: 8px;
+        gap: 4px;
+    }
+
+    .container .indicador .numero {
+        font-size: 2rem;
+    }
+}
+
 section{
 
     & .list{
         --calcular: 1;
         & .item{
-            transform: translateX(calc(-100vw * var(--calcular)));
+            transform: translateX(calc(-100% * var(--calcular)));
             transition: transform 0.5s ease;
 
             &.fora {
-                transform: translateX(100vw);
+                transform: translateX(100%);
                 transition: none;
             }
 
             &.entrando-esquerda {
-                transform: translateX(-100vw);
+                transform: translateX(-100%);
                 transition: none;
             }
 
             &.entrando-direita {
-                transform: translateX(100vw);
+                transform: translateX(100%);
                 transition: none;
             }
 
             &.saindo-esquerda {
-                transform: translateX(-100vw);
+                transform: translateX(-100%);
             }
 
             &.saindo-direita {
-                transform: translateX(100vw);
+                transform: translateX(100%);
             }
 
             &.ativo {
