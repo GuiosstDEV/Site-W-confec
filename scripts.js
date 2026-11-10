@@ -53,7 +53,7 @@ function trocarItem(direcao) {
 proxButton.onclick = () => trocarItem(1);
 antButton.onclick = () => trocarItem(-1);
 
-const secoesComReveal = document.querySelectorAll("#roupas, #servicos, #sobre");
+const secoesComReveal = document.querySelectorAll("#roupas, #servicos, #contato");
 
 if ("IntersectionObserver" in window) {
     const observadorDeReveal = new IntersectionObserver((entradas, observador) => {
