@@ -52,3 +52,21 @@ function trocarItem(direcao) {
 
 proxButton.onclick = () => trocarItem(1);
 antButton.onclick = () => trocarItem(-1);
+
+const secoesComReveal = document.querySelectorAll("#roupas, #servicos, #sobre");
+
+if ("IntersectionObserver" in window) {
+    const observadorDeReveal = new IntersectionObserver((entradas, observador) => {
+        entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add("reveal-visivel");
+                observador.unobserve(entrada.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    secoesComReveal.forEach((secao) => {
+        secao.classList.add("reveal-pendente");
+        observadorDeReveal.observe(secao);
+    });
+}

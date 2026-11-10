@@ -203,7 +203,7 @@ section {
 }
 
 .container .list .item .roupa-img {
-    left: calc(clamp(3rem, 7vw, 7.5rem) + 30px);
+    left: calc(clamp(3rem, 7vw, 7.5rem) + 152px);
     width: clamp(240px, 22vw, 420px);
 }
 
@@ -233,8 +233,21 @@ section {
     scroll-margin-top: 0;
 }
 
-#roupas {
+#roupas,
+#servicos,
+#sobre {
     scroll-margin-top: 84px;
+}
+
+.reveal-pendente {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-pendente.reveal-visivel {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .home-foto {
@@ -346,7 +359,7 @@ section {
     }
 
     .container .list .item .roupa-img {
-        left: calc(12% + 28px);
+        left: calc(12% + 148px);
         width: clamp(420px, 30%, 520px);
     }
 
@@ -362,7 +375,7 @@ section {
     }
 
     .container .list .item .roupa-img {
-        left: calc(6% + 24px);
+        left: calc(6% + 94px);
         width: 34%;
     }
 
@@ -416,7 +429,9 @@ section {
         width: min(78vw, 360px);
     }
 
-    #roupas {
+    #roupas,
+    #servicos,
+    #sobre {
         scroll-margin-top: 64px;
     }
 
@@ -737,6 +752,12 @@ section{
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .reveal-pendente {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
     .list .item.ativo .roupa-img img,
     .list .item.ativo .roupa-img::before {
         animation: none;
