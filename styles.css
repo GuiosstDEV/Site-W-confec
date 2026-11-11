@@ -1,930 +1,445 @@
+:root {
+    --azul-escuro: #031466;
+    --azul-claro: #2f80f0;
+    --amarelo: #ffc21a;
+    --formas: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1672' height='941' viewBox='0 0 1672 941'%3E%3Cpolygon points='1672,115 1672,941 640,941' fill='%23020f5a' opacity='.45'/%3E%3Cpolygon points='0,285 188,246 436,0 612,0 340,250 0,330' fill='%232f80f0' opacity='.5'/%3E%3Cpolygon points='523,78 582,0 612,0 555,78' fill='%23ffa300'/%3E%3Cpolygon points='0,815 70,822 540,941 400,941 0,868' fill='%23ffb817'/%3E%3Cpolygon points='0,868 400,941 0,941' fill='%232f80f0'/%3E%3Cpolygon points='1672,590 1672,690 1450,941 1330,941' fill='%232f80f0'/%3E%3Cpolygon points='1672,690 1672,941 1450,941' fill='%23ffb817'/%3E%3C/svg%3E");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family:sans-serif
+}
 
-
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     overflow-x: hidden;
-    background-color: #000;
-    color:#fff;
+    background: var(--azul-escuro);
+    color: #fff;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 16px;
-    scroll-behavior: smooth;
 }
 
+/* ---------- Seções (fundo azul + formas + marca d'água) ---------- */
+main > section {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    background:
+        var(--formas) center / cover no-repeat,
+        radial-gradient(ellipse 45% 60% at 28% 55%, rgba(47, 128, 240, .55), transparent),
+        linear-gradient(115deg, #020e5a 0%, #052a9f 55%, #031a80 100%);
+}
+
+main > section::before {
+    content: "";
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    width: 36vw;
+    height: 22vw;
+    transform: translateX(-50%);
+    background: url("./img/Logow.png") top / 100% auto no-repeat;
+    opacity: .1;
+    pointer-events: none;
+}
+
+/* ---------- Header ---------- */
 header {
     position: fixed;
-    top: 0;
+    inset: 0 0 auto 0;
     z-index: 10;
-    width: 100%;
-    min-height: 68px;
-    padding: 8px clamp(16px, 3vw, 40px);
-    left: 50%;
-    transform: translateX(-50%);
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: clamp(14px, 2.4vw, 36px) clamp(20px, 3vw, 50px) 0;
+    pointer-events: none;
+}
 
-    & .logo {
-        display: inline-flex;
-        width: fit-content;
-    }
+header > * { pointer-events: auto; }
 
-    & .logo img {
-        width: 88px;
-        height: auto;
-        object-fit: contain;
-    }
+.logo img {
+    display: block;
+    width: clamp(84px, 8vw, 140px);
+    height: auto;
+}
 
-    & nav {
-        & ul {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-    }
+nav ul {
+    display: flex;
+    gap: clamp(16px, 2.4vw, 40px);
+    padding-top: clamp(4px, .9vw, 14px);
 }
 
 .nav-link {
+    position: relative;
+    padding: 6px 0;
+    color: #fff;
+    font-size: clamp(.8rem, 1.15vw, 1.2rem);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--amarelo);
+    transform: scaleX(0);
+    transition: transform .25s ease;
+}
+
+.nav-link.ativo::after,
+.nav-link:hover::after,
+.nav-link:focus-visible::after { transform: scaleX(1); }
+
+.nav-link:focus-visible { outline: 2px solid #fff; outline-offset: 6px; }
+
+/* ---------- Botão amarelo (compartilhado) ---------- */
+.home-btn,
+.informacao {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    padding: 0 12px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 0.875rem;
+    gap: .8em;
+    padding: .8em 1.3em .8em 1.1em;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ffc61a, #ffa700);
+    color: #0b1a4d;
+    font-size: clamp(1rem, 1.5vw, 1.6rem);
     font-weight: 700;
-    letter-spacing: 0.04em;
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-
-    &:hover,
-    &:focus-visible {
-        border-color: #FFD43B;
-        background-color: rgba(255, 212, 59, 0.18);
-        outline: none;
-    }
+    box-shadow: 0 10px 30px rgba(255, 167, 0, .3);
+    transition: transform .2s ease, box-shadow .2s ease;
 }
 
-main {
-    padding-top: 0;
-}
+.wpp { width: 1.9em; height: 1.9em; filter: brightness(0); }
+.chev { width: .8em; height: .8em; margin-left: .3em; }
 
-section {
-    background-image: radial-gradient(circle, #061D8B , #3A83C4 );
-    min-height: 100vh;
-    min-height: 100svh;
-    position: relative;
-    overflow: hidden;
+.home-btn:hover,
+.container .item.ativo .informacao:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(255, 167, 0, .42); }
 
-    & .list {
+.home-btn:focus-visible,
+.informacao:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 
-    width: min(92vw, 1600px);
-    height: 100%;
-    margin: auto;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-    
-        & .item {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-           
-            & .roupa-img {
-                position: absolute;
-                z-index: 2;
-                left: clamp(2.5rem, 5vw, 7rem);
-                top: 50%;
-                transform: translateY(-50%);
-                width: clamp(220px, 28vw, 420px);
-
-                & img {
-                    width: 100%;
-                    max-height: 70vh;
-                    object-fit: contain;
-                    transform: rotate(-10deg);
-                }
-                &::before {
-                    content: '';
-                    position: absolute;
-                    background-color: rgba(0, 0, 0, 0.7);
-                    width: 60%;
-                    height: 50px;
-                    bottom: 2%;
-                    left: 20%;
-                    border-radius: 50%;
-                    filter: blur(20px);
-                }
-            }
-
-            & .content {
-                position: absolute;
-                right: clamp(5.5rem, 7vw, 8.5rem);
-                width: min(30vw, 430px);
-                height: 100%;
-                text-align: right;
-
-                & .content-top {
-                    position: absolute;
-                    right: 0;
-                    bottom: calc(50% - 5px);
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-end;
-
-                    & h2 {
-                        max-width: min(48vw, 680px);
-                        font-size: clamp(2.8rem, 5vw, 6.5rem);
-                        line-height: 0.9em;
-                    }
-                }
-
-                & .content-bottom {
-                    position: absolute;
-                    top: calc(50% + 55px);
-                    right: 0;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-end;
-                    gap: 18px;
-
-                    & .roupa-descricao {
-                        color: #fff;
-                        max-width: 340px;
-                        font-size: 16px;
-                        line-height: 1.5;
-                        text-align: right;
-                    }
-
-                    & .informacao {
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 30px;
-                        min-width: 150px;
-                        height: 48px;
-                        padding: 0 14px;
-                        gap: 8px;
-                        border: 2px solid #8bbcff;
-                        background-color: #061D8B;
-                        color: #fff;
-                        cursor: pointer;
-                        font-weight: bold;
-                        text-decoration: none;
-                        transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-                        & img {
-                            width: 24px;
-                            height: 24px;
-                            filter: brightness(0) invert(1);
-                        }
-
-                        &:hover,
-                        &:focus-visible {
-                            transform: translateY(-2px);
-                            outline: none;
-                            box-shadow: 0 0 0 3px #FFD43B;
-                        }
-                    }
-                }
-            }
-
-        }
-    }
-
-}  
-
-.container {
-    height: calc(100vh - 84px);
-    height: calc(100svh - 84px);
-    min-height: 0;
-}
-
-.container .list {
-    width: min(92vw, 1600px);
-}
-
-.container .list .item .roupa-img {
-    left: calc(clamp(3rem, 7vw, 7.5rem) + 152px);
-    width: clamp(240px, 22vw, 420px);
-}
-
-.container .list .item .content {
-    right: clamp(5.5rem, 7vw, 8.5rem);
-    width: min(30vw, 430px);
-}
-
-.container .list .item .content .content-top h2 {
-    max-width: 100%;
-    font-size: clamp(3rem, 4.8vw, 5.4rem);
-}
-
-.container .seta {
-    width: min(calc(100% - 32px), 1680px);
-}
-
-.container .indicador {
-    width: min(92vw, 1600px);
-}
-
-.home {
+/* ---------- Setas e pontos ---------- */
+.seta {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    flex-direction: column;
-    padding: 84px 0 0;
-    scroll-margin-top: 0;
-    color: #fff;
-    background-color: #061D8B;
-    background-image: radial-gradient(circle, #061D8B, #3A83C4);
-    background-size: cover;
-    background-repeat: no-repeat;
+    justify-content: space-between;
+    padding: 0 clamp(12px, 2.2vw, 40px);
+    pointer-events: none;
 }
 
-.home,
-.home * {
-    font-family: "Source Sans 3", sans-serif;
+.seta :is(button, a) {
+    display: grid;
+    place-items: center;
+    width: clamp(40px, 4vw, 66px);
+    aspect-ratio: 1;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background-color .2s ease, transform .2s ease;
 }
+
+.seta :is(button, a):last-child { background: rgba(2, 12, 80, .55); }
+.seta :is(button, a):hover { background: rgba(255, 255, 255, .18); transform: scale(1.06); }
+.seta :is(button, a):focus-visible { outline: 3px solid var(--amarelo); outline-offset: 4px; }
+.ch { width: 42%; height: 42%; }
+
+.home-pontos,
+.indicador ul { display: flex; gap: 12px; }
+
+.home-pontos li,
+.indicador ul li {
+    width: clamp(10px, .85vw, 14px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #3f7ee8;
+    transition: .3s;
+}
+
+.home-pontos li { background: rgba(190, 205, 240, .55); }
+.home-pontos li.ativo,
+.indicador ul li.ativo { background: var(--amarelo); transform: scale(1.2); }
+
+/* ---------- Home ---------- */
+.home { display: flex; align-items: center; }
 
 .home-fachada {
     position: absolute;
     top: 0;
     right: 0;
     width: 62%;
-    height: calc(100% - 70px);
+    height: 100%;
     object-fit: cover;
-    object-position: center 30%;
-    z-index: 0;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 40%);
-    mask-image: linear-gradient(90deg, transparent 0, #000 40%);
+    object-position: left center;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 38%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 38%);
 }
 
 .home-conteudo {
     position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: clamp(24px, 5vh, 64px) clamp(20px, 5vw, 80px) 48px;
+    z-index: 2;
+    width: 100%;
+    padding: clamp(70px, 8vh, 100px) clamp(20px, 6.4vw, 110px) 0;
 }
 
 .home-tag {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 14px;
-    font-size: 0.95rem;
+    gap: 1.2em;
+    margin-bottom: .6em;
+    color: #d3e1ff;
+    font-size: clamp(.75rem, 1.2vw, 1.25rem);
     font-weight: 500;
-    letter-spacing: 0.5em;
+    letter-spacing: .5em;
+}
 
-    &::before,
-    &::after {
-        content: "";
-        width: 60px;
-        height: 1.5px;
-        background: #fff;
-    }
+.home-tag::before {
+    content: "";
+    width: clamp(40px, 5vw, 84px);
+    height: 4px;
+    background: var(--amarelo);
 }
 
 .home h1 {
     max-width: 12ch;
-    font-size: clamp(2.8rem, 6.4vw, 5.6rem);
+    font-size: clamp(2.8rem, 6.4vw, 7rem);
     font-weight: 800;
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-
-    & em {
-        display: block;
-        width: max-content;
-        color: #27c4ff;
-    }
+    line-height: .95;
+    letter-spacing: -.03em;
 }
 
+.home h1 em {
+    display: block;
+    width: max-content;
+    color: var(--amarelo);
+    font-style: italic;
+}
+
+.home h1 .ponto { color: var(--amarelo); }
+
 .home-lead {
-    max-width: 36ch;
-    margin: 24px 0 30px;
-    font-size: clamp(1.15rem, 1.9vw, 1.55rem);
+    max-width: 30ch;
+    margin: .8em 0 1.3em;
+    color: #e8eeff;
+    font-size: clamp(1rem, 1.6vw, 1.7rem);
     line-height: 1.3;
 }
 
-.home-botoes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-    margin-top: auto;
-}
-
-.home-btn {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    min-width: 260px;
-    padding: 12px 18px 12px 22px;
-    border: 2px solid #fff;
-    border-radius: 999px;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    line-height: 1.15;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-
-    & small {
-        display: block;
-        font-size: 0.85rem;
-        font-weight: 400;
-    }
-
-    & .ico {
-        display: flex;
-        width: 34px;
-        height: 34px;
-        flex: none;
-    }
-
-    & .seta-ico {
-        display: flex;
-        width: 18px;
-        margin-left: auto;
-    }
-
-    & svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    &:hover,
-    &:focus-visible {
-        transform: translateY(-2px);
-        outline: none;
-        box-shadow: 0 0 0 3px #FFD43B;
-    }
-
-    &.claro {
-        background: #fff;
-        color: #061D8B;
-    }
-
-    &.escuro {
-        background: #061D8B;
-        border-color: #8bbcff;
-    }
-}
-
-@media (max-width: 1000px) {
-    .home-fachada {
-        width: 100%;
-        height: 60%;
-        opacity: 0.4;
-        -webkit-mask-image: linear-gradient(180deg, #000 20%, transparent);
-        mask-image: linear-gradient(180deg, #000 20%, transparent);
-    }
-
-}
-
-@media (max-width: 560px) {
-    .home-tag {
-        letter-spacing: 0.3em;
-
-        &::before {
-            display: none;
-        }
-    }
-
-    .home-btn {
-        min-width: 100%;
-    }
-
-}
-
-#roupas,
-#servicos,
-#contato {
-    scroll-margin-top: 84px;
-}
-
-.reveal-pendente {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal-pendente.reveal-visivel {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-.seta {
-    width: min(92vw, 1500px);
-    max-width: 1500px;
+.home-pontos {
     position: absolute;
     z-index: 3;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-
-    & button {
-        position: relative;
-        z-index: 3;
-        display: grid;
-        place-items: center;
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.55);
-        background-color: rgba(6, 29, 139, 0.55);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        pointer-events: auto;
-        backdrop-filter: blur(6px);
-        transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-
-        &:nth-child(1) img {
-            transform: rotate(180deg);
-        }
-
-        &:hover {
-            background-color: #061D8B;
-            border-color: #fff;
-            transform: scale(1.08);
-        }
-
-        &:focus-visible {
-            outline: 3px solid #FFD43B;
-            outline-offset: 4px;
-        }
-
-        & img {
-            width: 28px;
-            height: 28px;
-            filter: brightness(0) invert(1);
-            transition: transform 0.2s ease;
-        }
-    }
+    left: clamp(20px, 6.7vw, 115px);
+    bottom: clamp(20px, 8vh, 80px);
 }
+
+/* ---------- Roupas (carrossel) ---------- */
+.container .list {
+    --calcular: 1;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.container .item {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 43vw 1fr;
+    align-items: center;
+    column-gap: 6vw;
+    padding: 4vh 7vw 0 11vw;
+    transform: translateX(calc(-100% * var(--calcular)));
+    transition: transform .5s ease;
+}
+
+.container .item.fora { transform: translateX(100%); transition: none; }
+.container .item.entrando-esquerda { transform: translateX(-100%); transition: none; }
+.container .item.entrando-direita { transform: translateX(100%); transition: none; }
+.container .item.saindo-esquerda { transform: translateX(-100%); }
+.container .item.saindo-direita { transform: translateX(100%); }
+.container .item.ativo { transform: translateX(0); }
+
+.roupa-img {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+}
+
+.roupa-img img {
+    width: 100%;
+    max-height: 70svh;
+    object-fit: contain;
+}
+
+.roupa-img::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 20, .6);
+    filter: blur(20px);
+}
+
+.roupa-img::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    inset: -8%;
+    background: radial-gradient(closest-side, rgba(70, 150, 255, .6), transparent);
+}
+
+.container .item.ativo .roupa-img img { animation: roupa-flutuar 3s ease-in-out infinite; }
+.container .item.ativo .roupa-img::before { animation: sombra-flutuar 3s ease-in-out infinite; }
+
+.content { display: flex; flex-direction: column; align-items: flex-start; }
+
+.content h2 {
+    font-size: min(calc(var(--tam) * 1vw), 11rem);
+    font-weight: 800;
+    line-height: .95;
+    letter-spacing: -.03em;
+}
+
+.content-top::after {
+    content: "";
+    display: block;
+    width: clamp(60px, 6vw, 100px);
+    height: 5px;
+    margin: 2.4vh 0;
+    border-radius: 2px;
+    background: var(--amarelo);
+}
+
+.roupa-descricao {
+    max-width: 18em;
+    font-size: clamp(1.2rem, 2.35vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.12;
+}
+
+.roupa-descricao span { display: block; color: var(--amarelo); }
+
+.roupa-texto {
+    max-width: 25em;
+    margin: 1.8vh 0 3.4vh;
+    color: #e6edff;
+    font-size: clamp(1rem, 1.45vw, 1.6rem);
+    line-height: 1.3;
+}
+
+.content :is(h2, .roupa-descricao, .roupa-texto, .informacao) {
+    transform: translate(calc(-10px * var(--calcular)), -25px);
+    transition: .7s;
+    transition-delay: .3s;
+}
+
+.content .roupa-descricao { transition-delay: .5s; }
+.content .roupa-texto { transition-delay: .7s; }
+.content .informacao { transition-delay: .9s; }
+
+.container .item.ativo .content :is(h2, .roupa-descricao, .roupa-texto, .informacao) { transform: translate(0, 0); }
+.container .item.ativo .content .informacao:hover { transition-delay: 0s; }
 
 .indicador {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 200px;
-    width: 90vw;
+    z-index: 3;
+    left: clamp(14px, 2.9vw, 50px);
+    top: 54%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: end;
-    gap: 20px;
-
-    & .numero{
-        font-size: 5em;
-        width: 90px;
-        text-align: center;
-    }
-    & ul {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        width: 90px;
-
-        & li{
-            width: 12px;
-            height: 12px;
-            background-color: #FCB52F;
-            border-radius: 50%;
-            transition: 0.3s;
-             }
-
-             & .ativo {
-                background-color: #061D8B ;
-                transform: scale(1.25);
-        }
-    }
 }
 
-@media (min-width: 1800px) {
-    .container .list {
-        width: min(88vw, 1680px);
-    }
+.indicador .numero { font-size: clamp(2rem, 3.2vw, 3.4rem); font-weight: 800; line-height: 1; }
+.indicador .total { margin-top: .2em; color: #b8c8ee; font-size: clamp(1.1rem, 1.7vw, 1.8rem); }
+.indicador ul { margin-top: clamp(12px, 1.6vw, 24px); }
 
-    .container .list .item .roupa-img {
-        left: calc(12% + 148px);
-        width: clamp(420px, 30%, 520px);
-    }
+.reveal-pendente { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+.reveal-pendente.reveal-visivel { opacity: 1; transform: none; }
 
-    .container .list .item .content {
-        right: clamp(5.5rem, 7vw, 8.5rem);
-        width: min(30vw, 440px);
-    }
-}
-
-@media (max-width: 1000px) {
-    .container .list {
-        width: 94vw;
-    }
-
-    .container .list .item .roupa-img {
-        left: calc(6% + 94px);
-        width: 34%;
-    }
-
-    .container .list .item .content {
-        right: clamp(3.5rem, 6vw, 5.5rem);
-        width: min(38%, 390px);
-    }
-
-    .container .list .item .content .content-top h2 {
-        font-size: clamp(3rem, 6vw, 4.5rem);
-    }
-
-    .container .list .item .content .content-bottom .roupa-descricao {
-        font-size: 15px;
-    }
-
-    .container .seta {
-        width: calc(100% - 28px);
-    }
-}
-
-@media (max-width: 820px) {
-    header {
-        min-height: 64px;
-        padding: 6px 12px;
-        grid-template-columns: auto 1fr;
-        gap: 12px;
-    }
-
-    header .logo img {
-        width: 68px;
-    }
-
-    header nav ul {
-        justify-content: flex-end;
-        gap: 2px;
-    }
-
-    .nav-link {
-        min-height: 38px;
-        padding: 0 8px;
-        font-size: 0.72rem;
-        letter-spacing: 0.02em;
-    }
-
-    #roupas,
-    #servicos,
-    #contato {
-        scroll-margin-top: 64px;
-    }
-
-    .container {
-        height: calc(100vh - 64px);
-        height: calc(100svh - 64px);
-        min-height: 0;
-    }
-
-    .container .list {
-        width: 100%;
-    }
-
-    .container .list .item .roupa-img {
-        top: 7%;
-        left: 50%;
-        width: clamp(170px, 48vw, 240px);
-        height: 32svh;
-        transform: translateX(calc(-50% + 21px));
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .container .list .item .roupa-img::before {
-        position: relative;
-        order: 2;
-        bottom: auto;
-        left: auto;
-        flex: 0 0 50px;
-        margin-top: -50px;
-    }
-
-    .container .list .item .roupa-img img {
-        max-height: 100%;
-    }
-
-    .container .list .item .content {
-        top: 52%;
-        right: 50%;
-        width: min(84vw, 420px);
-        height: auto;
-        text-align: center;
-        transform: translateX(50%);
-    }
-
-    .container .list .item .content .content-top {
-        position: static;
-        align-items: center;
-    }
-
-    #roupas .list .item .content .content-top h2 {
-        max-width: 100%;
-        font-size: clamp(2rem, 9vw, 3.5rem);
-        line-height: 0.95;
-        text-align: center;
-    }
-
-    .container .list .item .content .content-bottom {
-        position: static;
-        align-items: center;
-        gap: 12px;
-        margin-top: 10px;
-    }
-
-    .container .list .item .content .content-bottom .roupa-descricao {
-        max-width: 32rem;
-        font-size: 14px;
-        line-height: 1.4;
-        text-align: center;
-    }
-
-    .container .list .item .content .content-bottom .informacao {
-        min-width: 148px;
-        height: 46px;
-    }
-
-    .container .seta {
-        top: 35%;
-        width: calc(100% - 18px);
-    }
-
-    .container .seta button {
-        width: 42px;
-        height: 42px;
-    }
-
-    .container .seta button img {
-        width: 22px;
-        height: 22px;
-    }
-
-    .container .indicador {
-        top: auto;
-        bottom: 18px;
-        left: 18px;
-        width: auto;
-        height: auto;
-        transform: none;
-        gap: 8px;
-    }
-
-    .container .indicador .numero {
-        width: auto;
-        font-size: clamp(2.2rem, 10vw, 3.2rem);
-        text-align: left;
-    }
-
-    .container .indicador ul {
-        justify-content: flex-start;
-        width: auto;
-    }
-}
-
-@media (max-width: 380px) {
-    header {
-        gap: 4px;
-        padding-inline: 8px;
-    }
-
-    header .logo img {
-        width: 58px;
-    }
-
-    .nav-link {
-        min-height: 36px;
-        padding-inline: 6px;
-        font-size: 0.66rem;
-    }
-
-    .container .list .item .content {
-        top: 55%;
-    }
-
-    #roupas .list .item .content .content-top h2 {
-        font-size: clamp(1.8rem, 8vw, 2.4rem);
-    }
-
-    .container .list .item .content .content-bottom .roupa-descricao {
-        font-size: 14px;
-    }
-}
-
-@media (max-height: 600px) and (min-width: 821px) {
-    .container .list .item .roupa-img {
-        width: clamp(220px, 27vw, 360px);
-    }
-
-    .container .list .item .roupa-img img {
-        max-height: 62vh;
-    }
-
-    .container .list .item .content .content-top h2 {
-        font-size: clamp(2.8rem, 5vw, 5rem);
-    }
-
-    .container .list .item .content .content-bottom {
-        top: calc(50% + 42px);
-        gap: 12px;
-    }
-
-    .container .indicador {
-        height: 150px;
-    }
-}
-
-@media (max-height: 600px) and (max-width: 820px) {
-    .container .list .item .roupa-img {
-        top: 8%;
-        width: clamp(150px, 30vw, 220px);
-        height: 28svh;
-    }
-
-    .container .list .item .roupa-img img {
-        max-height: 100%;
-    }
-
-    .container .list .item .content {
-        top: 42%;
-    }
-
-    #roupas .list .item .content .content-top h2 {
-        font-size: clamp(1.8rem, 6vw, 2.8rem);
-    }
-
-    .container .list .item .content .content-bottom {
-        gap: 8px;
-        margin-top: 6px;
-    }
-
-    .container .list .item .content .content-bottom .roupa-descricao {
-        font-size: 13px;
-    }
-
-    .container .list .item .content .content-bottom .informacao {
-        height: 40px;
-    }
-
-    .container .seta {
-        top: 25%;
-    }
-
-    .container .indicador {
-        bottom: 8px;
-        gap: 4px;
-    }
-
-    .container .indicador .numero {
-        font-size: 2rem;
-    }
-}
-
-section{
-
-    & .list{
-        --calcular: 1;
-        & .item{
-            transform: translateX(calc(-100% * var(--calcular)));
-            transition: transform 0.5s ease;
-
-            &.fora {
-                transform: translateX(100%);
-                transition: none;
-            }
-
-            &.entrando-esquerda {
-                transform: translateX(-100%);
-                transition: none;
-            }
-
-            &.entrando-direita {
-                transform: translateX(100%);
-                transition: none;
-            }
-
-            &.saindo-esquerda {
-                transform: translateX(-100%);
-            }
-
-            &.saindo-direita {
-                transform: translateX(100%);
-            }
-
-            &.ativo {
-                transform: translateX(0);
-                transition-delay: 0s;
-            }
-            
-
-
-         & .roupa-img{
-
-             & img {
-                transform: rotate(0);
-                transition: 0.5s;
-                transition-delay: 0.3s;
-                
-                }
-            }
-
-            & .content{
-                & .content-top h2,
-                & .content-bottom .roupa-descricao,
-                & .content-bottom .informacao {
-                    transform: translate(calc(-10px * var(--calcular)), -25px);
-                    transition: 0.7s;
-                    transition-delay: 0.3s;
-
-                }
-
-                & .content-top h2 {
-                    transition-delay: 0.5s;
-                }
-
-                & .content-bottom .roupa-descricao {
-                    transition-delay: 0.8s;
-                }
-
-                & .content-bottom .informacao {
-                    transition-delay: 0.12s;
-                }
-
-            }
-        }
-        & .ativo{
-
-             & .roupa-img img {
-                animation: roupa-flutuar 3s ease-in-out infinite;
-             }
-
-             & .roupa-img::before {
-                animation: sombra-flutuar 3s ease-in-out infinite;
-             }
-
-             & img {
-                transform: rotate(0);
-                
-                }
-            }
-
-            & .content{
-                & .content-top h2,
-                & .content-bottom .roupa-descricao,
-                & .content-bottom .informacao {
-                    transform: translate(0, 0);
-             }
-        }
-
-    }
-}
+#roupas, #servicos, #contato { scroll-margin-top: 0; }
 
 @keyframes roupa-flutuar {
-    0%, 100% {
-        transform: translateY(0) rotate(0);
-    }
-
-    50% {
-        transform: translateY(-8px) rotate(-1deg);
-    }
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-8px) rotate(-1deg); }
 }
 
 @keyframes sombra-flutuar {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .7; transform: scale(.9); }
+}
 
-    50% {
-        opacity: 0.7;
-        transform: scale(0.9);
+/* ---------- Tablet / celular ---------- */
+@media (max-width: 820px) {
+    header { padding: 10px 14px 0; }
+    .logo img { width: 72px; }
+    nav ul { gap: 12px; padding-top: 6px; }
+    .nav-link { font-size: .72rem; }
+
+    main > section::before { width: 80vw; height: 50vw; top: 18%; }
+
+    .home { align-items: flex-end; }
+    .home-fachada {
+        width: 100%;
+        height: 58%;
+        opacity: .55;
+        -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent);
+        mask-image: linear-gradient(180deg, #000 30%, transparent);
     }
+    .home-conteudo { padding: 0 24px 90px; }
+    .home h1 { font-size: clamp(2.6rem, 12vw, 4rem); }
+    .home .seta { top: 30%; }
+    .home-pontos { left: 24px; bottom: 36px; }
+
+    .container .item {
+        grid-template-columns: 1fr;
+        grid-template-rows: 42% auto;
+        align-content: center;
+        justify-items: center;
+        padding: 80px 24px 90px;
+        text-align: center;
+    }
+    .roupa-img { width: min(70vw, 340px); height: 100%; }
+    .roupa-img img { max-height: 100%; }
+    .content { align-items: center; }
+    .content h2 { font-size: min(calc(var(--tam) * 1.8vw), 4rem); }
+    .content-top::after { margin: 14px auto; }
+    .roupa-descricao { font-size: 1.15rem; }
+    .roupa-texto { margin: 10px 0 18px; font-size: .95rem; }
+    .container .seta { top: 30%; }
+    .container .seta :is(button, a) { width: 42px; }
+    .indicador { top: auto; bottom: 22px; left: 24px; flex-direction: row; align-items: center; gap: 12px; }
+    .indicador .total { margin: 0; }
+    .indicador ul { margin: 0 0 0 4px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .reveal-pendente {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-
-    .list .item.ativo .roupa-img img,
-    .list .item.ativo .roupa-img::before {
-        animation: none;
-    }
+    .reveal-pendente { opacity: 1; transform: none; transition: none; }
+    .container .item.ativo .roupa-img img,
+    .container .item.ativo .roupa-img::before { animation: none; }
+    html { scroll-behavior: auto; }
 }

@@ -6,6 +6,8 @@ let indicador = document.querySelector(".indicador");
 let pontos = indicador.querySelectorAll("ul li");
 let list = container.querySelector(".list");
 
+indicador.querySelector(".total").textContent = "/ " + String(items.length).padStart(2, "0");
+
 let ativo = 0;
 let animando = false;
 
@@ -69,4 +71,20 @@ if ("IntersectionObserver" in window) {
         secao.classList.add("reveal-pendente");
         observadorDeReveal.observe(secao);
     });
+}
+
+const linksNav = document.querySelectorAll(".nav-link");
+if ("IntersectionObserver" in window) {
+    const observadorNav = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+            if (!entrada.isIntersecting) return;
+            linksNav.forEach((link) => {
+                const atual = link.getAttribute("href") === "#" + entrada.target.id;
+                link.classList.toggle("ativo", atual);
+                if (atual) link.setAttribute("aria-current", "page");
+                else link.removeAttribute("aria-current");
+            });
+        });
+    }, { threshold: 0.55 });
+    document.querySelectorAll("main section[id]").forEach((secao) => observadorNav.observe(secao));
 }

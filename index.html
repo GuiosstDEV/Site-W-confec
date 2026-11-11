@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;1,800&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Site TESTE</title>
+    <title>W Confecções</title>
 </head>
 
 <body>
@@ -31,25 +31,17 @@
     <main>
         <section class="home" id="home" aria-label="Página inicial">
             <img class="home-fachada" src="./img/WFachada.webp" alt="Fachada da W Confecções">
-
             <div class="home-conteudo">
-                <div class="home-botoes">
-                    <a class="home-btn claro" href="#" target="_blank" rel="noopener noreferrer">
-                        <span class="ico"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-</svg></span>
-                        <span class="txt">Como Chegar<small>Ver no Google Maps</small></span>
-                        <span class="seta-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    </a>
-                    <a class="home-btn escuro" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer">
-                        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21l1.6-4.6A9 9 0 1 1 8 19.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1.2-1.6-2.2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2.2z" fill="currentColor"/></svg></span>
-                        <span class="txt">Fale Conosco<small>Solicite um orçamento</small></span>
-                        <span class="seta-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    </a>
-                </div>
-
+                <div class="home-tag">W CONFECÇÕES</div>
+                <h1>Qualidade e <em>profissionalismo</em> em cada detalhe<span class="ponto">.</span></h1>
+                <p class="home-lead">Produzimos uniformes e peças sob medida para empresas, escolas e equipes que valorizam identidade, conforto e excelência.</p>
+                <a class="home-btn" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
-
+            <div class="seta">
+                <a href="#contato" aria-label="Seção anterior"><svg class="ch" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="#roupas" aria-label="Próxima seção"><svg class="ch" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+            <ul class="home-pontos" aria-hidden="true"><li class="ativo"></li><li></li><li></li></ul>
         </section>
 
         <section class="container" id="roupas" aria-label="Catálogo de roupas">
@@ -60,11 +52,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Casual</h2>
+                        <h2 style="--tam:9">Casual</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisetas para diferentes estilos e ocasiões.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisetas <span>para diferentes estilos e ocasiões.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -74,11 +67,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Casual</h2>
+                        <h2 style="--tam:9">Casual</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Shorts e bermudas confortáveis para o dia a dia.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Shorts e bermudas confortáveis <span>para o dia a dia.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -88,11 +82,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Casual</h2>
+                        <h2 style="--tam:9">Casual</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Calças casuais versáteis para compor diferentes combinações.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Calças casuais versáteis <span>para compor diferentes combinações.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -102,11 +97,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Casual</h2>
+                        <h2 style="--tam:9">Casual</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Regatas leves e confortáveis para os dias mais quentes.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Regatas leves e confortáveis <span>para os dias mais quentes.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -116,11 +112,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Casual</h2>
+                        <h2 style="--tam:9">Casual</h2>
                     </div>
                     <div class="content-bottom">
                         <p class="roupa-descricao">Polos que combinam conforto e estilo.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -130,11 +127,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Social</h2>
+                        <h2 style="--tam:9">Social</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisas sociais para o trabalho e ocasiões especiais.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisas sociais <span>para o trabalho e ocasiões especiais.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -144,11 +142,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Escolares</h2>
+                        <h2 style="--tam:4.4">Uniformes Escolares</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisetas para uniformes escolares.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisetas <span>para uniformes escolares.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -158,11 +157,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Escolares</h2>
+                        <h2 style="--tam:4.4">Uniformes Escolares</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Shorts para uniformes escolares.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Shorts <span>para uniformes escolares.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -172,11 +172,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Escolares</h2>
+                        <h2 style="--tam:4.4">Uniformes Escolares</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Calças para uniformes escolares.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Calças <span>para uniformes escolares.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -186,11 +187,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Escolares</h2>
+                        <h2 style="--tam:4.4">Uniformes Escolares</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisetas personalizadas para turmas de terceirão.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisetas personalizadas <span>para turmas de terceirão.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -200,11 +202,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Escolares</h2>
+                        <h2 style="--tam:4.4">Uniformes Escolares</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Blusas para uniformes escolares.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Blusas <span>para uniformes escolares.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -214,11 +217,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Corporativos</h2>
+                        <h2 style="--tam:4.4">Uniformes Corporativos</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisas para uniformes corporativos.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisas <span>para uniformes corporativos.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -228,11 +232,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Corporativos</h2>
+                        <h2 style="--tam:4.4">Uniformes Corporativos</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisetas polo para uniformes corporativos.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisetas polo <span>para uniformes corporativos.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -242,11 +247,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Corporativos</h2>
+                        <h2 style="--tam:4.4">Uniformes Corporativos</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisetas para uniformes corporativos.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisetas <span>para uniformes corporativos.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -256,11 +262,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Corporativos</h2>
+                        <h2 style="--tam:4.4">Uniformes Corporativos</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Calças de brim para uniformes corporativos.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Calças de brim <span>para uniformes corporativos.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -270,11 +277,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Operacionais</h2>
+                        <h2 style="--tam:4.4">Uniformes Operacionais</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Colete para uniformes operacionais.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Colete <span>para uniformes operacionais.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -284,11 +292,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Operacionais</h2>
+                        <h2 style="--tam:4.4">Uniformes Operacionais</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Jaquetas para uniformes operacionais.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Jaquetas <span>para uniformes operacionais.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -298,11 +307,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Operacionais</h2>
+                        <h2 style="--tam:4.4">Uniformes Operacionais</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Calças para uniformes operacionais.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Calças <span>para uniformes operacionais.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -312,11 +322,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Operacionais</h2>
+                        <h2 style="--tam:4.4">Uniformes Operacionais</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisas para uniformes de segurança.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisas <span>para uniformes de segurança.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -326,11 +337,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Operacionais</h2>
+                        <h2 style="--tam:4.4">Uniformes Operacionais</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Jaquetas para uniformes de segurança.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Jaquetas <span>para uniformes de segurança.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -340,11 +352,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Operacionais</h2>
+                        <h2 style="--tam:4.4">Uniformes Operacionais</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Calças reforçadas para uniformes de segurança.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Calças reforçadas <span>para uniformes de segurança.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -354,11 +367,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Operacionais</h2>
+                        <h2 style="--tam:4.4">Uniformes Operacionais</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Jaquetas para uniformes do SAMU.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Jaquetas <span>para uniformes do SAMU.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -368,11 +382,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Uniformes Operacionais</h2>
+                        <h2 style="--tam:4.4">Uniformes Operacionais</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Calças para uniformes do SAMU.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Calças <span>para uniformes do SAMU.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -382,11 +397,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Inverno</h2>
+                        <h2 style="--tam:5.6">Inverno</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Moletons confortáveis para os dias frios.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Moletons confortáveis <span>para os dias frios.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -396,11 +412,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Inverno</h2>
+                        <h2 style="--tam:5.6">Inverno</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Calças de moletom para manter o conforto no frio.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Calças de moletom <span>para manter o conforto no frio.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -410,11 +427,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Inverno</h2>
+                        <h2 style="--tam:5.6">Inverno</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Jaquetas para os dias mais frios.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Jaquetas <span>para os dias mais frios.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -424,11 +442,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Inverno</h2>
+                        <h2 style="--tam:5.6">Inverno</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Blusas confortáveis para completar o guarda-roupa de inverno.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Blusas confortáveis <span>para completar o guarda-roupa de inverno.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -438,11 +457,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Esportivo</h2>
+                        <h2 style="--tam:5.6">Esportivo</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisetas esportivas para diferentes atividades.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisetas esportivas <span>para diferentes atividades.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -452,11 +472,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Esportivo</h2>
+                        <h2 style="--tam:5.6">Esportivo</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Camisetas para futebol.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Camisetas <span>para futebol.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -466,11 +487,12 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Esportivo</h2>
+                        <h2 style="--tam:5.6">Esportivo</h2>
                     </div>
                     <div class="content-bottom">
                         <p class="roupa-descricao">Calças esportivas masculinas.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -480,23 +502,25 @@
                 </div>
                 <div class="content">
                     <div class="content-top">
-                        <h2>Esportivo</h2>
+                        <h2 style="--tam:5.6">Esportivo</h2>
                     </div>
                     <div class="content-bottom">
-                        <p class="roupa-descricao">Leggings confortáveis para atividades físicas.</p>
-                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp-logo.svg" alt="">Fale conosco</a>
+                        <p class="roupa-descricao">Leggings confortáveis <span>para atividades físicas.</span></p>
+                        <p class="roupa-texto">Estilo, conforto e qualidade em peças feitas para você se sentir bem em qualquer ocasião.</p>
+                        <a class="informacao" href="https://wa.me/5514991325101" target="_blank" rel="noopener noreferrer"><img class="wpp" src="./img/whatsapp-logo.svg" alt="">Fale conosco<svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="seta">
-            <button id="ant" type="button" aria-label="Produto anterior"><img src="./img/setas.svg" alt=""></button>
-            <button id="prox" type="button" aria-label="Próximo produto"><img src="./img/setas.svg" alt=""></button>
+            <button id="ant" type="button" aria-label="Produto anterior"><svg class="ch" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button id="prox" type="button" aria-label="Próximo produto"><svg class="ch" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
 
         <div class="indicador">
             <div class="numero">01</div>
+            <div class="total">/ 30</div>
             <ul aria-label="Progresso dos produtos">
                 <li class="ativo"></li>
                 <li></li>
